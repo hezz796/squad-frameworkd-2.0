@@ -1,0 +1,68 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "default_agent": "coordinator",
+
+  "agents": {
+    "coordinator": {
+      "description": "Coordena o ciclo de desenvolvimento, mantém o estado da squad e delega tarefas.",
+      "mode": "primary",
+      "permissions": [
+        { "action": "subagent", "resource": "*", "effect": "allow" }
+      ]
+    },
+
+    "product-analyst": {
+      "description": "Transforma pedidos em requisitos, escopo e critérios de aceite verificáveis.",
+      "mode": "subagent"
+    },
+
+    "architect": {
+      "description": "Avalia opções técnicas e registra decisões de arquitetura sem implementar a solução.",
+      "mode": "subagent"
+    },
+
+    "implementer": {
+      "description": "Implementa tarefas delimitadas e retorna mudanças e evidências verificáveis.",
+      "mode": "subagent"
+    },
+
+    "qa": {
+      "description": "Verifica critérios de aceite, testes e regressões sem editar a implementação.",
+      "mode": "subagent",
+      "permissions": [
+        { "action": "edit", "resource": "*", "effect": "deny" },
+        { "action": "shell", "resource": "*", "effect": "ask" }
+      ]
+    },
+
+    "reviewer": {
+      "description": "Revisa mudanças sem editá-las e relata defeitos, regressões e riscos.",
+      "mode": "subagent",
+      "permissions": [
+        { "action": "edit", "resource": "*", "effect": "deny" },
+        { "action": "shell", "resource": "*", "effect": "deny" },
+        { "action": "shell", "resource": "git status *", "effect": "allow" },
+        { "action": "shell", "resource": "git diff *", "effect": "allow" },
+        { "action": "shell", "resource": "git log *", "effect": "allow" }
+      ]
+    },
+
+    "security-reviewer": {
+      "description": "Analisa riscos de segurança em mudanças e configurações, sem editar arquivos.",
+      "mode": "subagent",
+      "permissions": [
+        { "action": "edit", "resource": "*", "effect": "deny" },
+        { "action": "shell", "resource": "*", "effect": "deny" },
+        { "action": "shell", "resource": "git status *", "effect": "allow" },
+        { "action": "shell", "resource": "git diff *", "effect": "allow" },
+        { "action": "shell", "resource": "git log *", "effect": "allow" }
+      ]
+    },
+
+    "release-manager": {
+      "description": "Prepara notas e artefatos de release conforme a política do projeto.",
+      "mode": "subagent"
+    }
+  }
+}

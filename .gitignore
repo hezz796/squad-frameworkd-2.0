@@ -1,0 +1,30 @@
+# Segredos e credenciais comuns
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+credentials.json
+secrets.json
+.netrc
+.npmrc
+
+# Artefatos gerados (agnósticos a stack)
+node_modules/
+dist/
+build/
+target/
+__pycache__/
+*.pyc
+.venv/
+venv/
+coverage/
+*.log
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db

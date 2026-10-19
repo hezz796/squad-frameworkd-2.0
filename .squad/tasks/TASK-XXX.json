@@ -1,0 +1,28 @@
+{
+  "id": "TASK-XXX",
+  "title": "Título objetivo da tarefa",
+  "objective": "Descreva o resultado esperado.",
+  "status": "todo",
+  "owner": "coordinator",
+  "depends_on": [],
+  "scope": {
+    "include": [],
+    "exclude": []
+  },
+  "acceptance_criteria": [
+    "Descreva um resultado observável e verificável."
+  ],
+  "verification_plan": [
+    {
+      "name": "Verificação relevante",
+      "method": "Descreva o comando, teste ou inspeção prevista."
+    }
+  ],
+  "evidence": [],
+  "assumptions": [],
+  "blockers": [],
+  "worktree": null,
+  "session_id": null,
+  "created_at": "2026-10-19T00:00:00Z",
+  "updated_at": "2026-10-19T00:00:00Z"
+}

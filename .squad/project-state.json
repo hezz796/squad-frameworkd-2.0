@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "project": {
+    "name": "squad-framework-2.0",
+    "goal": "framework de squad autônoma e agnóstica a stack para desenvolvimento de software usando OpenCode 2.0.32",
+    "stack_status": "undecided"
+  },
+  "workflow": {
+    "phase": "maintenance",
+    "status": "complete",
+    "current_task_id": null,
+    "next_action": "README.md recriado na raiz e verificado; divergência de memória corrigida (TASK-001 registrava o arquivo como existente, mas ele não estava no repositório). Nenhuma tarefa ativa; aguardar próximo pedido (/start)."
+  },
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "title": "Criar README.md na raiz documentando a squad",
+      "status": "done",
+      "path": "README.md",
+      "owner": "coordinator"
+    }
+  ],
+  "decisions": [],
+  "active_work": [],
+  "last_verified": {
+    "commit": null,
+    "checks": [
+      {
+        "name": "Criação do README.md na raiz",
+        "result": "passed",
+        "evidence": "README.md criado (111 linhas) cobrindo objetivo, estrutura, agentes, skills, commands, início/retomada, memória em .squad/ e aprovação humana; conteúdo extraído apenas dos arquivos existentes; UTF-8 confirmado por releitura."
+      },
+      {
+        "name": "Limite de arquivos alterados",
+        "result": "passed",
+        "evidence": "git status --porcelain pelo coordenador: apenas README.md adicionado como não rastreado além dos arquivos já existentes; nenhum arquivo de configuração (.opencode/, opencode.jsonc) alterado; nenhum commit."
+      },
+      {
+        "name": "Divergência memória x repositório",
+        "result": "passed",
+        "evidence": "Test-Path README.md retornou False antes do trabalho, embora a TASK-001 constasse como done; registro corrigido conforme a skill memory-management (corrigir informação desatualizada em vez de repeti-la como fato)."
+      }
+    ],
+    "notes": "README.md recriado em 2026-10-19 (a versão anterior da TASK-001 não estava presente no repositório). Trabalho entregue sem commit, conforme prática anterior; git segue sem commits e com arquivos não rastreados."
+  },
+  "blockers": [],
+  "updated_at": "2026-10-19T20:50:24Z"
+}
